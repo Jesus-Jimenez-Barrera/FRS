@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Imagen</title>
+</head>
+<body>
+    <h1>Captura de Imagen</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+    <button id="capture">Capturar</button>
+    <p id="status"></p>
+
+    <script>
+        // Acceder a la cámara
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const captureButton = document.getElementById('capture');
+        const status = document.getElementById('status');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error('Error accessing the camera: ' + err);
+            });
+
+        captureButton.addEventListener('click', () => {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataUrl = canvas.toDataURL('image/jpeg');
+            
+            fetch('/capture/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ image: dataUrl })
+            })
+            .then(response => response.json())
+            .then(data => {
+                status.innerText = data.message;
+                if (data.recognized) {
+                    status.innerText += ` Usuario: ${data.user_name}`;
+                }
+            })
+            .catch(err => {
+                console.error('Error sending the image: ' + err);
+            });
+        });
+    </script>
+</body>
+</html>
