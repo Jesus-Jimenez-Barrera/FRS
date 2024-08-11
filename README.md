@@ -11,7 +11,7 @@ To standardize the updates and way of working, we will work with the Semantic Ve
 example: 
 PreA 0.0.1.0
 
-# Configuracion de git
+# Git configuration
 1. Install Git.
 2. Configure Git with an account linked to github.
 3. Request access to the administrator.
