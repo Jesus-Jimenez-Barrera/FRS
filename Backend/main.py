@@ -1,11 +1,11 @@
+# Main File
+"""  File necessary for the initialization of the service that will act as backend, 
+this contains the routes and configuration that allows the AI ​​model to function."""
+
 import uvicorn
+from fastapi import FastAPI
 
-from fastapi import FastAPI 
-from Backend.Routes.Face_api import router as face_router
+AIserver = FastAPI()
 
-FRS = FastAPI()
-
-FRS.include_router(face_router, prefix="/api", tags=["Face Recognition"])
-
-if __name__ == "__main__":
-    uvicorn.run()
+if __name__ == '__main__':
+    print('Exito la api esta en escucxha constante')
