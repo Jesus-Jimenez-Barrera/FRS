@@ -1,5 +1,5 @@
 """
-env File
+Env File
 This Script was made by StarSoft Team
 
 File necessary to control sensitive environment variables.

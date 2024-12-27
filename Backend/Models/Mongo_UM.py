@@ -1,5 +1,5 @@
 """ 
-Mongo User Model File
+Mongo User Model
 This Script was made by StarSoft Team
 
 Model for users in MongoDB.
