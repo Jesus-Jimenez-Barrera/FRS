@@ -1,6 +1,6 @@
 """  
 Face Recognition System.
-This Script was made by StarSoft Team.
+This Script was made by StarSoft Team (Asaf Diaz Riveraa, Jennifer, Enrique Becerril, Jesus Jimenez Barrera).
 
 System configuration file aimed at detecting facial patterns to determine if the user 
 is registered in the system.
