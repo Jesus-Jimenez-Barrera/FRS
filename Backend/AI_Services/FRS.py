@@ -1,9 +1,9 @@
 """  
-Face Recognition System.
-This Script was made by StarSoft Team (Asaf Diaz Riveraa, Jennifer, Enrique Becerril, Jesus Jimenez Barrera).
+Title:
+    Face Recognition System.
 
-System configuration file aimed at detecting facial patterns to determine if the user 
-is registered in the system.
+Description: 
+    This Script was made by StarSoft Team (Asaf Diaz Riveraa, Jennifer, Enrique Becerril, Jesus Jimenez Barrera).
 """
 
 # Import of libraries, modules and packages
@@ -13,4 +13,6 @@ import imutils
 import numpy as np
 import face_recognition as fr
 
-
+# Compare Faces
+def decode_faces():
+    return 0

@@ -11,16 +11,15 @@ from fastapi import FastAPI
 import uvicorn
 
 # Project modules
-#from Backend.Routes.access_route import access_route
+from Routes.face_recognition import router as face_router
 
 # Application instance
-app = FastAPI()
+app = FastAPI(title="Facial Recognition Service")
 
 # Routes
-@app.get('/index')
-def test():
-    return "Correct, all works"
+app.include_router(face_router, prefix='/api')
 
-# Start our FastAPI application server when we run the script directly
-if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+# Routes
+@app.get('/')
+def home():
+    return {"message": "FRS API running"}
