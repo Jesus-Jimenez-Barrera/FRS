@@ -8,18 +8,14 @@ this contains the routes and configuration that allows the AI ​​model to fun
 
 # Import of libraries, modules and packages
 from fastapi import FastAPI
-import uvicorn
+from app.routes import recognition
 
-# Project modules
-from Routes.face_recognition import router as face_router
 
-# Application instance
-app = FastAPI(title="Facial Recognition Service")
+# from routes.recognition import router
 
-# Routes
-app.include_router(face_router, prefix='/api')
+app = FastAPI()
+app.include_router(recognition.router)
 
-# Routes
-@app.get('/')
-def home():
-    return {"message": "FRS API running"}
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

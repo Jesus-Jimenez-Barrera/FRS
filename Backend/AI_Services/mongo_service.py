@@ -8,9 +8,10 @@ Description:
 """
 
 # Import of libraries, modules and packages
-from Config.database import collection
+from Config.database import db
 
 # Get the stored users
-def get_users():
-    users = list(collection.find({}, {'_id': 0}))
-    return users
+def get_registered_users():
+    users_collection = db["users"]
+    users = users_collection.find({}, {"_id": 1, "name": 1, "image": 1})
+    return list(users)
