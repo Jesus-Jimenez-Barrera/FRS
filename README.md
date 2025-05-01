@@ -1,5 +1,5 @@
 # Face_Recognition
-![Static Badge](https://img.shields.io/badge/version-PreA%200.0.1.2-blue)
+![Static Badge](https://img.shields.io/badge/version-Alpha(A)%200.0.1.0-blue)
 
 ## Description 
 This repository has been created for the development of a facial recognition application, it continues to be constantly developed and improved.
@@ -18,12 +18,5 @@ To standardize the updates and way of working, we will work with the Semantic Ve
 
 ## Project Configuration Information
 
-### Git configuration
-1. Install Git.
-2. Configure Git with an account linked to github.
-3. Request access to the administrator.
-4. Execute the following command on the destination path: 
+### Diagram
 
-```
-https://github.com/Jesus-Jimenez-Barrera/FRS.git
-```
