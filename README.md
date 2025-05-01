@@ -19,4 +19,4 @@ To standardize the updates and way of working, we will work with the Semantic Ve
 ## Project Configuration Information
 
 ### Diagram
-
+  <pre> ```mermaid graph TD 91["User&lt;br&gt;External Actor"] subgraph 89["Face Recognition System"] 100["Minio Storage&lt;br&gt;Object Storage"] 101["External User/Log API&lt;br&gt;External Service"] 90["Backend API"] 99["MongoDB Database&lt;br&gt;Database"] %% Edges at this level (grouped by source) 90["Backend API"] -->|Reads/Writes embeddings| 99["MongoDB Database&lt;br&gt;Database"] 90["Backend API"] -->|Stores/Retrieves images| 100["Minio Storage&lt;br&gt;Object Storage"] 90["Backend API"] -->|Calls| 101["External User/Log API&lt;br&gt;External Service"] end %% Edges at this level (grouped by source) 91["User&lt;br&gt;External Actor"] -->|Sends image for recognition| 90["Backend API"] ``` </pre>
