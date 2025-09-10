@@ -11,10 +11,10 @@ Description:
 
 # Import of libraries, modules and packages
 from fastapi import FastAPI
-from Backend_FRS.models import ImageRequest, RecognitionResult
-from Backend_FRS.face_recognition import recognize_face
-from Backend_FRS.minio_client import upload_image
-from Backend_FRS.external_api import log_access
+from .models import ImageRequest, RecognitionResult
+from .face_recognition import recognize_face
+from .minio_client import upload_image
+from .external_api import log_access
 from datetime import datetime
 import io
 import base64
